@@ -89,6 +89,14 @@ img {
   max-width: 100%;
 }
 
+.lung-scan-visual,
+.lung-scan-image {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
 code {
   padding: 0.1em 0.35em;
   border-radius: 4px;
@@ -917,6 +925,50 @@ code {
   content: "";
 }
 
+.expression-preview {
+  background:
+    linear-gradient(#159f91, #159f91) 27% 58% / 22% 34% no-repeat,
+    linear-gradient(#082f3d, #082f3d) 27% 52% / 22% 2px no-repeat,
+    linear-gradient(#176b9d, #176b9d) 73% 30% / 22% 58% no-repeat,
+    linear-gradient(#082f3d, #082f3d) 73% 28% / 22% 2px no-repeat,
+    linear-gradient(#bdcac8, #bdcac8) left bottom / 100% 2px no-repeat;
+  border-radius: 4px;
+}
+
+.paired-preview {
+  background:
+    linear-gradient(28deg, transparent 48%, rgba(21, 159, 145, 0.75) 49% 51%, transparent 52%) 0 0 / 100% 100%,
+    radial-gradient(circle at 18% 72%, #176b9d 0 5px, transparent 6px),
+    radial-gradient(circle at 82% 39%, #159f91 0 5px, transparent 6px),
+    linear-gradient(#bdcac8, #bdcac8) left bottom / 100% 2px no-repeat;
+}
+
+.survival-preview {
+  background:
+    linear-gradient(to right, #159f91 0 22%, transparent 22%) 0 22% / 100% 3px no-repeat,
+    linear-gradient(to right, transparent 22%, #159f91 22% 48%, transparent 48%) 0 38% / 100% 3px no-repeat,
+    linear-gradient(to right, transparent 48%, #159f91 48% 72%, transparent 72%) 0 55% / 100% 3px no-repeat,
+    linear-gradient(to right, transparent 72%, #159f91 72%) 0 69% / 100% 3px no-repeat,
+    linear-gradient(to right, #176b9d 0 18%, transparent 18%) 0 31% / 100% 3px no-repeat,
+    linear-gradient(to right, transparent 18%, #176b9d 18% 41%, transparent 41%) 0 51% / 100% 3px no-repeat,
+    linear-gradient(to right, transparent 41%, #176b9d 41% 68%, transparent 68%) 0 69% / 100% 3px no-repeat,
+    linear-gradient(to right, transparent 68%, #176b9d 68%) 0 83% / 100% 3px no-repeat,
+    linear-gradient(#bdcac8, #bdcac8) left bottom / 100% 2px no-repeat;
+}
+
+.clinical-preview {
+  background:
+    radial-gradient(circle at 38% 18%, #159f91 0 6px, transparent 7px),
+    radial-gradient(circle at 55% 42%, #176b9d 0 6px, transparent 7px),
+    radial-gradient(circle at 66% 66%, #159f91 0 6px, transparent 7px),
+    radial-gradient(circle at 48% 88%, #176b9d 0 6px, transparent 7px),
+    linear-gradient(#159f91, #159f91) 27% 18% / 22% 2px no-repeat,
+    linear-gradient(#176b9d, #176b9d) 43% 42% / 25% 2px no-repeat,
+    linear-gradient(#159f91, #159f91) 52% 66% / 28% 2px no-repeat,
+    linear-gradient(#176b9d, #176b9d) 34% 88% / 28% 2px no-repeat,
+    linear-gradient(#8a989f, #8a989f) 50% 0 / 1px 100% no-repeat;
+}
+
 .plot-caption {
   display: grid;
   padding: 28px 30px;
@@ -1662,6 +1714,8 @@ h1 .wave-text::after {
   animation: genomic-letter-wave 1.8s ease-in-out infinite;
   animation-delay: calc(var(--wave-index) * -90ms);
   will-change: transform;
+  margin-top: 0.18em;
+  margin-bottom: 0.18em;
 }
 
 @keyframes genomic-letter-wave {
@@ -2731,6 +2785,76 @@ blockquote cite {
     opacity: 1;
     transform: translateY(0);
   }
+
+  body.motion-ready .water-reveal {
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    clip-path: inset(0 100% 0 0 round 2px);
+    filter: blur(8px);
+    transform: translate3d(-56px, 14px, 0) skewX(-2deg);
+    transition:
+      opacity 0.75s ease var(--reveal-delay, 0ms),
+      clip-path 1s cubic-bezier(0.19, 1, 0.22, 1) var(--reveal-delay, 0ms),
+      filter 0.9s ease var(--reveal-delay, 0ms),
+      transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) var(--reveal-delay, 0ms);
+    will-change: opacity, clip-path, filter, transform;
+  }
+
+  body.motion-ready h2.water-reveal,
+  body.motion-ready h3.water-reveal,
+  body.motion-ready p.water-reveal,
+  body.motion-ready blockquote cite.water-reveal {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  body.motion-ready .water-reveal::after {
+    position: absolute;
+    inset: -16% -45%;
+    z-index: 1;
+    background:
+      radial-gradient(circle at 22% 50%, rgba(0, 230, 199, 0.34), transparent 19%),
+      radial-gradient(circle at 43% 45%, rgba(185, 242, 39, 0.22), transparent 15%),
+      linear-gradient(90deg, transparent 0 24%, rgba(0, 230, 199, 0.28) 38%, rgba(255, 255, 255, 0.5) 50%, rgba(33, 169, 255, 0.2) 60%, transparent 76%);
+    content: "";
+    mix-blend-mode: screen;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-62%) scaleX(0.7);
+  }
+
+  body.motion-ready .water-reveal.is-visible {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 2px);
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) skewX(0);
+  }
+
+  body.motion-ready .water-reveal.is-visible::after {
+    animation: water-text-wash 1.05s cubic-bezier(0.19, 1, 0.22, 1) var(--reveal-delay, 0ms) both;
+  }
+
+}
+
+@keyframes water-text-wash {
+  0% {
+    opacity: 0;
+    transform: translateX(-62%) scaleX(0.7);
+  }
+
+  18% {
+    opacity: 0.72;
+  }
+
+  62% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(62%) scaleX(1.12);
+  }
 }
 
 /* ---------- Cyberpunk cursor ---------- */
@@ -2896,6 +3020,50 @@ blockquote cite {
       rotate(var(--drop-angle))
       translateY(calc((var(--drop-distance) + 15px) * -1))
       scale(0.6);
+  }
+}
+
+/* Directional stream that travels with left-to-right section reveals. */
+.water-splash--entrance {
+  z-index: 95;
+}
+
+.water-splash--entrance .water-droplet,
+.water-splash--entrance .water-droplet:nth-of-type(3n) {
+  top: var(--flow-y);
+  left: 0;
+  width: var(--flow-width);
+  height: var(--flow-height);
+  border-width: 1.2px;
+  border-radius: 58% 42% 54% 46% / 50%;
+  transform: translate3d(-4px, 0, 0) scaleX(0.3) scaleY(0.8);
+  animation: water-droplet-flow var(--flow-duration) cubic-bezier(0.19, 0.72, 0.22, 1) forwards;
+  animation-delay: var(--flow-delay);
+}
+
+@keyframes water-droplet-flow {
+  0% {
+    opacity: 0;
+    transform: translate3d(-4px, 0, 0) scaleX(0.3) scaleY(0.8);
+  }
+
+  18% {
+    opacity: 0.88;
+  }
+
+  48% {
+    opacity: 0.82;
+    transform: translate3d(calc(var(--flow-distance) * 0.42), var(--flow-curve-y), 0) scaleX(var(--flow-stretch)) scaleY(1);
+  }
+
+  76% {
+    opacity: 0.62;
+    transform: translate3d(calc(var(--flow-distance) * 0.78), var(--flow-late-y), 0) scaleX(calc(var(--flow-stretch) * 1.08)) scaleY(0.86);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--flow-distance), var(--flow-end-y), 0) scaleX(calc(var(--flow-stretch) * 1.18)) scaleY(0.58);
   }
 }
 

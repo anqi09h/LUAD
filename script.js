@@ -1,3 +1,15 @@
+// Always return to Home after a refresh instead of restoring the previous scroll position.
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+const navigationEntry = performance.getEntriesByType("navigation")[0];
+if (navigationEntry?.type === "reload") {
+  history.replaceState(null, "", `${location.pathname}${location.search}`);
+  window.scrollTo(0, 0);
+  window.addEventListener("load", () => window.scrollTo(0, 0), { once: true });
+}
+
 // Wait until the HTML is ready before finding page elements.
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.querySelector(".site-loader");
@@ -8,9 +20,73 @@ document.addEventListener("DOMContentLoaded", () => {
   const technicalDetails = document.querySelector("#technical-details");
   const sectionLinks = document.querySelectorAll(".nav-links a");
   const sections = document.querySelectorAll("main section[id]");
-  const revealTargets = document.querySelectorAll(
+  const moduleRevealTargets = document.querySelectorAll(
     ".feature-card, .tool-card, .workflow-list li, .plot-card, .next-list li, .learning-grid article"
   );
+  const waterTextTargets = document.querySelectorAll(
+    [
+      "main section:not(.hero) .section-number",
+      "main section:not(.hero) h2",
+      "main section:not(.hero) h3",
+      "main section:not(.hero) p",
+      ".in-progress-note",
+      "blockquote p",
+      "blockquote cite"
+    ].join(", ")
+  );
+
+  const createWaterSplash = (originX, originY, dropletCount = 10) => {
+    const splash = document.createElement("span");
+    splash.className = "water-splash";
+    splash.setAttribute("aria-hidden", "true");
+    splash.style.setProperty("--splash-x", `${originX}px`);
+    splash.style.setProperty("--splash-y", `${originY}px`);
+    splash.innerHTML = Array.from(
+      { length: dropletCount },
+      (_, index) =>
+        `<i class="water-droplet" style="--drop-index:${index}; --drop-angle:${
+          index * (360 / dropletCount) + (index % 2) * 11
+        }deg; --drop-distance:${34 + (index % 4) * 10}px"></i>`
+    ).join("");
+
+    document.body.append(splash);
+    window.setTimeout(() => splash.remove(), 900);
+  };
+
+  const createEntranceFlow = (target) => {
+    const bounds = target.getBoundingClientRect();
+    const flow = document.createElement("span");
+    const dropletCount = 2 + Math.floor(Math.random() * 3);
+    const flowDistance = 44 + Math.random() * 14;
+
+    flow.className = "water-splash water-splash--entrance";
+    flow.setAttribute("aria-hidden", "true");
+    flow.style.setProperty(
+      "--splash-x",
+      `${Math.min(window.innerWidth - 14, bounds.right - 4)}px`
+    );
+    flow.style.setProperty("--splash-y", `${bounds.top + bounds.height * 0.55}px`);
+    flow.innerHTML = Array.from(
+      { length: dropletCount },
+      () => {
+        const width = 12 + Math.random() * 6;
+        const height = 3.5 + Math.random() * 2;
+        const startY = -6 + Math.random() * 12;
+        const curveDirection = Math.random() < 0.5 ? -1 : 1;
+        const curveY = curveDirection * (7 + Math.random() * 10);
+        const endY = -startY;
+        const lateY = curveY * 0.38 + endY * 0.62;
+        const duration = 560 + Math.random() * 360;
+        const delay = Math.random() * 180;
+        const stretch = 0.9 + Math.random() * 0.85;
+
+        return `<i class="water-droplet" style="--flow-y:${startY}px; --flow-curve-y:${curveY}px; --flow-late-y:${lateY}px; --flow-end-y:${endY}px; --flow-distance:${flowDistance}px; --flow-width:${width}px; --flow-height:${height}px; --flow-duration:${duration}ms; --flow-delay:${delay}ms; --flow-stretch:${stretch}"></i>`;
+      }
+    ).join("");
+
+    document.body.append(flow);
+    window.setTimeout(() => flow.remove(), 1200);
+  };
 
   // Keep the welcome screen visible long enough to read, then reveal the site.
   if (loader) {
@@ -39,23 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("pointerdown", (event) => {
     if (event.button !== 0) return;
 
-    const splash = document.createElement("span");
-    splash.className = "water-splash";
-    splash.setAttribute("aria-hidden", "true");
-    splash.style.setProperty("--splash-x", `${event.clientX}px`);
-    splash.style.setProperty("--splash-y", `${event.clientY}px`);
-    splash.innerHTML = `
-      ${Array.from(
-        { length: 10 },
-        (_, index) =>
-          `<i class="water-droplet" style="--drop-index:${index}; --drop-angle:${
-            index * 36 + (index % 2) * 11
-          }deg; --drop-distance:${34 + (index % 4) * 10}px"></i>`
-      ).join("")}
-    `;
-
-    document.body.append(splash);
-    window.setTimeout(() => splash.remove(), 900);
+    createWaterSplash(event.clientX, event.clientY);
   });
 
   // Use a cyberpunk targeting cursor on precise pointing devices.
@@ -175,20 +235,32 @@ document.addEventListener("DOMContentLoaded", () => {
   // Introduce research modules as they enter view without hiding content when JS is unavailable.
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.body.classList.add("motion-ready");
-    revealTargets.forEach((target) => target.classList.add("reveal-target"));
+    moduleRevealTargets.forEach((target) => target.classList.add("reveal-target"));
+    waterTextTargets.forEach((target, index) => {
+      target.classList.add("water-reveal");
+      target.style.setProperty("--reveal-delay", `${(index % 6) * 70}ms`);
+    });
 
     const revealObserver = new IntersectionObserver(
       (entries, activeObserver) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           entry.target.classList.add("is-visible");
+          if (entry.target.classList.contains("water-reveal")) {
+            const delay = Number.parseFloat(
+              entry.target.style.getPropertyValue("--reveal-delay")
+            ) || 0;
+            window.setTimeout(() => createEntranceFlow(entry.target), delay + 780);
+          }
           activeObserver.unobserve(entry.target);
         });
       },
       { threshold: 0.12, rootMargin: "0px 0px -45px" }
     );
 
-    revealTargets.forEach((target) => revealObserver.observe(target));
+    [...moduleRevealTargets, ...waterTextTargets].forEach((target) =>
+      revealObserver.observe(target)
+    );
   }
 
   // Keep the copyright year current automatically.

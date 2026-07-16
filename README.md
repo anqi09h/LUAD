@@ -1,14 +1,14 @@
-# Decoding LUAD
+# KRT16 in LUAD
 
-A simple static portfolio website documenting an in-progress bioinformatics
-analysis of TCGA-LUAD lung adenocarcinoma data.
+A simple static portfolio website documenting an in-progress analysis of KRT16
+expression and clinical relevance in TCGA-LUAD lung adenocarcinoma data.
 
-The project uses R, TCGAbiolinks, and maftools to:
+The project uses R and TCGAbiolinks to prepare:
 
-- access and prepare TCGA-LUAD mutation data;
-- read Mutation Annotation Format (MAF) files;
-- create mutation summary, oncoplot, and transition/transversion plots; and
-- prepare tumour and normal RNA-seq data for future analysis.
+- a KRT16 tumour-versus-normal expression plot;
+- a paired expression sensitivity analysis when matched samples are available;
+- a Kaplan-Meier overall-survival curve and Cox model; and
+- a clinical-association plot or adjusted Cox forest plot.
 
 The website is written with plain HTML, CSS, and JavaScript, so it does not
 require npm, a build step, or a web framework.
@@ -31,9 +31,10 @@ Create a folder named `plots` beside `index.html`, then add:
 
 ```text
 plots/
-├── oncoplot.png
-├── maf_summary.png
-└── titv.png
+├── krt16_expression.png
+├── krt16_paired.png
+├── krt16_survival.png
+└── krt16_clinical.png
 ```
 
 The website shows designed placeholder graphics when these files are missing.
@@ -62,6 +63,6 @@ is needed.
 
 ## Project status
 
-This analysis is still in progress. The current plots are descriptive, the RNA
-expression matrix is being prepared, and the scientific interpretation may
-change as the workflow is checked and expanded.
+This analysis is still in progress. KRT16 is a research target, not a validated
+biomarker, and the scientific interpretation may change as the workflow is
+checked and expanded.
