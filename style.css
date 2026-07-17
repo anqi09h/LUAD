@@ -2776,29 +2776,21 @@ blockquote cite {
 
 @media (prefers-reduced-motion: no-preference) {
   body.motion-ready .reveal-target {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   body.motion-ready .reveal-target.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+    animation: module-reveal-in 0.65s ease both;
   }
 
   body.motion-ready .water-reveal {
     position: relative;
     overflow: hidden;
-    opacity: 0;
-    clip-path: inset(0 100% 0 0 round 2px);
-    filter: blur(8px);
-    transform: translate3d(-56px, 14px, 0) skewX(-2deg);
-    transition:
-      opacity 0.75s ease var(--reveal-delay, 0ms),
-      clip-path 1s cubic-bezier(0.19, 1, 0.22, 1) var(--reveal-delay, 0ms),
-      filter 0.9s ease var(--reveal-delay, 0ms),
-      transform 0.9s cubic-bezier(0.19, 1, 0.22, 1) var(--reveal-delay, 0ms);
-    will-change: opacity, clip-path, filter, transform;
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 2px);
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) skewX(0);
   }
 
   body.motion-ready h2.water-reveal,
@@ -2825,16 +2817,41 @@ blockquote cite {
   }
 
   body.motion-ready .water-reveal.is-visible {
-    opacity: 1;
-    clip-path: inset(0 0 0 0 round 2px);
-    filter: blur(0);
-    transform: translate3d(0, 0, 0) skewX(0);
+    animation: water-content-reveal 1s cubic-bezier(0.19, 1, 0.22, 1) var(--reveal-delay, 0ms) both;
   }
 
   body.motion-ready .water-reveal.is-visible::after {
     animation: water-text-wash 1.05s cubic-bezier(0.19, 1, 0.22, 1) var(--reveal-delay, 0ms) both;
   }
 
+}
+
+@keyframes module-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes water-content-reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0 round 2px);
+    filter: blur(8px);
+    transform: translate3d(-56px, 14px, 0) skewX(-2deg);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 2px);
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) skewX(0);
+  }
 }
 
 @keyframes water-text-wash {
