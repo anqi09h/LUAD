@@ -21,15 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const sectionLinks = document.querySelectorAll(".nav-links a");
   const sections = document.querySelectorAll("main section[id]");
   const moduleRevealTargets = document.querySelectorAll(
-    ".feature-card, .tool-card, .workflow-list li, .plot-card, .next-list li, .learning-grid article"
+    ".scientific-card, .scientific-workflow li, .result-figure-card, .database-panel, .scientific-placeholder, .mutation-frequency-card, .mutation-type-card, .integrated-result, .limitations-grid article"
   );
   const waveTextTargets = document.querySelectorAll(
     [
       "main section:not(.hero) .section-number",
-      "main section:not(.hero) h2",
-      "main section:not(.hero) h3",
-      "main section:not(.hero) p:not(.in-progress-note p)",
-      "blockquote cite"
+      "main section:not(.hero) .section-heading h2",
+      "main section:not(.hero) .section-heading > p",
+      "main section:not(.hero) .compact-heading h2",
+      "main section:not(.hero) .final-conclusion > h2",
+      "main section:not(.hero) .conclusion-statement",
+      "main section:not(.hero) .contact-inner h2"
     ].join(", ")
   );
 
@@ -221,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Show or hide the optional technical details.
-  technicalButton.addEventListener("click", () => {
+  technicalButton?.addEventListener("click", () => {
     const isExpanded = technicalButton.getAttribute("aria-expanded") === "true";
     technicalButton.setAttribute("aria-expanded", String(!isExpanded));
     technicalDetails.hidden = isExpanded;
@@ -244,6 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!entry.isIntersecting) return;
 
         sectionLinks.forEach((link) => {
+          if (link.hasAttribute("aria-current")) return;
           const matchesSection = link.getAttribute("href") === `#${entry.target.id}`;
           link.classList.toggle("active", matchesSection);
         });
@@ -302,5 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Keep the copyright year current automatically.
-  document.querySelector("#current-year").textContent = new Date().getFullYear();
+  const currentYear = document.querySelector("#current-year");
+  if (currentYear) currentYear.textContent = new Date().getFullYear();
 });

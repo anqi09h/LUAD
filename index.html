@@ -3,39 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A student bioinformatics project evaluating KRT16 expression and clinical relevance in TCGA-LUAD lung adenocarcinoma data.">
-  <title>KRT16 in LUAD | Bioinformatics Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=20260716-3">
-  <script src="script.js?v=20260716-3" defer></script>
+  <meta name="description" content="A scientific bioinformatics presentation evaluating KRT16 expression, pathways, mutations, and survival in lung adenocarcinoma.">
+  <title>KRT16 in LUAD | Scientific Bioinformatics Presentation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#03131d">
+  <link rel="stylesheet" href="style.css?v=20260718-8">
+  <script src="script.js?v=20260718-8" defer></script>
 </head>
 <body>
-  <div class="site-loader" role="status" aria-live="polite" aria-label="Loading KRT16 in LUAD">
+  <div class="site-loader" role="status" aria-live="polite" aria-label="Loading KRT16 in LUAD presentation">
     <div class="loader-grid" aria-hidden="true"></div>
     <div class="loader-content">
       <div class="loader-brand" aria-hidden="true">
         <span class="loader-brand-mark">ATCG</span>
         <span>KRT16 // LUAD</span>
       </div>
-      <p class="loader-code">SYSTEM_BOOT // RESEARCH NODE 2026</p>
-      <h2 class="loader-title">Welcome to the <span>analysis.</span></h2>
-      <p class="loader-message">Initializing genomic workspace and loading research modules.</p>
-      <div class="loader-progress" aria-hidden="true">
-        <span></span>
-      </div>
+      <p class="loader-code">SYSTEM_BOOT // SCIENTIFIC PRESENTATION</p>
+      <h2 class="loader-title">Loading the <span>evidence chain.</span></h2>
+      <p class="loader-message">Preparing expression, pathway, mutation, and survival modules.</p>
+      <div class="loader-progress" aria-hidden="true"><span></span></div>
       <div class="loader-status" aria-hidden="true">
         <span>TCGA-LUAD</span>
-        <span>SECURE CONNECTION</span>
+        <span>GSE32863</span>
         <span class="loader-online"><i></i> ONLINE</span>
       </div>
     </div>
   </div>
 
   <div class="screen-noise" aria-hidden="true"></div>
-  <!-- Skip link helps keyboard and screen-reader users reach the content quickly. -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
+    <nav class="nav container" aria-label="Scientific presentation navigation">
       <a class="brand" href="#home" aria-label="KRT16 in LUAD home">
         <span class="brand-mark" aria-hidden="true">ATCG</span>
         <span>KRT16 in LUAD</span>
@@ -46,29 +45,30 @@
         <span></span><span></span><span></span>
       </button>
 
-      <div class="nav-links" id="nav-links">
+      <div class="nav-links scientific-nav" id="nav-links">
         <a href="#overview">Overview</a>
         <a href="#workflow">Workflow</a>
-        <a href="#results">Results</a>
-        <a href="#reflection">Reflection</a>
+        <a href="#differential">Expression</a>
+        <a href="#pathways">Pathways</a>
+        <a href="#mutation">Mutation</a>
+        <a href="#survival">Survival</a>
+        <a href="#integrated">Conclusion</a>
+        <a class="nav-about" href="about.html">About Me <span aria-hidden="true">↗</span></a>
       </div>
-
-      <a class="button button-small nav-cta" href="#results">View figure plan</a>
     </nav>
   </header>
 
   <main id="main-content">
-    <!-- Hero section: the first summary visitors see. -->
     <section class="hero section" id="home">
       <div class="hero-glow hero-glow-one"></div>
       <div class="hero-glow hero-glow-two"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="status-dot"></span> Target of interest / KRT16</div>
-          <p class="hero-kicker">TCGA-LUAD // COMPUTATIONAL ONCOLOGY // 2026</p>
+          <div class="eyebrow"><span class="status-dot"></span> Scientific presentation / KRT16</div>
+          <p class="hero-kicker">LUNG ADENOCARCINOMA // MULTI-LAYER BIOINFORMATICS</p>
           <h1>
-            Testing the
-            <span class="wave-text" aria-label="KRT16 signal">
+            Following the
+            <span class="wave-text" aria-label="KRT16 evidence">
               <span class="wave-word" aria-hidden="true">
                 <span class="wave-letter" style="--wave-index: 0">K</span><span class="wave-letter" style="--wave-index: 1">R</span><span class="wave-letter" style="--wave-index: 2">T</span><span class="wave-letter" style="--wave-index: 3">1</span><span class="wave-letter" style="--wave-index: 4">6</span>
               </span>
@@ -76,39 +76,38 @@
                 <span class="wave-letter" style="--wave-index: 5">s</span><span class="wave-letter" style="--wave-index: 6">i</span><span class="wave-letter" style="--wave-index: 7">g</span><span class="wave-letter" style="--wave-index: 8">n</span><span class="wave-letter" style="--wave-index: 9">a</span><span class="wave-letter" style="--wave-index: 10">l</span>
               </span>
             </span>
-            <br>in lung cancer
+            <br>in LUAD
           </h1>
           <p class="hero-summary">
-            A focused TCGA-LUAD analysis asking whether KRT16 expression differs
-            between tumour and normal tissue and whether it is associated with patient outcomes.
+            A discovery-to-validation analysis of KRT16 expression, biological context,
+            DNA-level alterations, and overall-survival association in lung adenocarcinoma.
           </p>
           <div class="hero-actions">
-            <a class="button" href="#overview">Explore the project <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="#workflow">See my workflow <span aria-hidden="true">→</span></a>
+            <a class="button" href="#overview">Begin presentation <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#integrated">View evidence chain <span aria-hidden="true">→</span></a>
           </div>
-          <dl class="hero-stats" aria-label="Project highlights">
-            <div><dt>01</dt><dd>target gene</dd></div>
-            <div><dt>04</dt><dd>core figures</dd></div>
-            <div><dt>R</dt><dd>analysis core</dd></div>
+          <dl class="hero-stats" aria-label="Presentation highlights">
+            <div><dt>02</dt><dd>expression cohorts</dd></div>
+            <div><dt>07</dt><dd>KRT16 mutations</dd></div>
+            <div><dt>5Y</dt><dd>survival window</dd></div>
           </dl>
         </div>
 
-        <!-- Research console and animated lung X-ray scan. -->
         <div class="hero-visual" aria-hidden="true">
           <div class="data-card">
             <div class="data-card-top">
-              <span>LUAD::KRT16_CONSOLE</span>
-              <span class="live-label">LIVE NODE</span>
+              <span>LUAD::KRT16_EVIDENCE</span>
+              <span class="live-label">ANALYSIS</span>
             </div>
             <div class="console-meta">
-              <span>CASESET / TCGA-LUAD</span>
-              <span>PIPELINE / R-BIOCONDUCTOR</span>
+              <span>DISCOVERY / TCGA-LUAD</span>
+              <span>VALIDATION / GSE32863</span>
             </div>
             <div class="xray-window">
               <span class="scan-label label-a">THORACIC SCAN</span>
-              <span class="scan-label label-b">XRAY / LUNG FIELD</span>
+              <span class="scan-label label-b">LUAD / LUNG FIELD</span>
               <span class="scan-line"></span>
-              <div class="lung-scan-visual" role="img" aria-label="Lungs changing from healthy green to red as they are scanned">
+              <div class="lung-scan-visual" role="img" aria-label="Stylized lungs changing from green to red during a scan">
                 <img class="lung-scan-image lung-green" src="green_lung.png" alt="" draggable="false">
                 <div class="lung-red-reveal">
                   <img class="lung-scan-image lung-red" src="red_lung.png" alt="" draggable="false">
@@ -116,27 +115,27 @@
               </div>
             </div>
             <div class="data-card-bottom">
-              <div><span>TARGET / KRT16</span><strong><i></i> Selected</strong></div>
-              <div><span>RNA + CLINICAL</span><strong class="processing"><i></i> Processing</strong></div>
+              <div><span>EXPRESSION</span><strong><i></i> Upregulated</strong></div>
+              <div><span>SURVIVAL</span><strong class="processing"><i></i> Associated</strong></div>
             </div>
             <div class="console-readout">
-              <span>REPRODUCIBLE WORKFLOW</span>
-              <span>EXPRESSION + SURVIVAL</span>
-              <span>INTERPRETATION PENDING</span>
+              <span>PATHWAY CONTEXT</span>
+              <span>LOW-FREQUENCY MUTATION</span>
+              <span>VALIDATION REQUIRED</span>
             </div>
           </div>
-          <div class="floating-tag tag-one"><small>INPUT_01</small> KRT16 expression</div>
-          <div class="floating-tag tag-two"><small>INPUT_02</small> Clinical outcomes</div>
+          <div class="floating-tag tag-one"><small>DISCOVERY</small> TCGA-LUAD</div>
+          <div class="floating-tag tag-two"><small>VALIDATION</small> GSE32863</div>
         </div>
       </div>
     </section>
 
-    <aside class="research-rail" aria-label="Current research status">
+    <aside class="research-rail" aria-label="Scientific evidence status">
       <div class="container research-rail-inner">
-        <div><span>DATA ORIGIN</span><strong>Genomic Data Commons</strong></div>
-        <div><span>ANALYSIS MODE</span><strong>Targeted / exploratory</strong></div>
-        <div><span>CURRENT PHASE</span><strong>KRT16 evidence planning</strong></div>
-        <div class="rail-caution"><span>INTERPRETIVE STATUS</span><strong>Preliminary, not clinical</strong></div>
+        <div><span>DISEASE</span><strong>Lung adenocarcinoma</strong></div>
+        <div><span>DISCOVERY DATA</span><strong>TCGA-LUAD</strong></div>
+        <div><span>VALIDATION DATA</span><strong>GSE32863</strong></div>
+        <div class="rail-caution"><span>CLAIM LEVEL</span><strong>Association, not causation</strong></div>
       </div>
     </aside>
 
@@ -144,256 +143,314 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="section-number">01 / PROJECT OVERVIEW</p>
-            <h2>One target, tested with several lines of evidence.</h2>
+            <p class="section-number">01 / OVERVIEW</p>
+            <h2>Why study lung adenocarcinoma?</h2>
           </div>
-          <p>
-            This project focuses on KRT16. The analysis will first establish its
-            expression pattern, then test whether that pattern is connected to
-            survival or clinical characteristics in the TCGA-LUAD cohort.
-          </p>
+          <p class="section-lede">The project asks whether reproducible molecular signals can identify genes that deserve deeper biological and clinical investigation.</p>
         </div>
 
-        <div class="overview-grid">
-          <article class="feature-card question-card">
-            <span class="card-icon" aria-hidden="true">?</span>
-            <p class="card-label">RESEARCH QUESTION</p>
-            <h3>Is KRT16 altered in LUAD, and does its expression have clinical relevance?</h3>
-            <p>
-              I will compare KRT16 RNA expression between tumour and normal tissue,
-              evaluate patient survival, and examine associations with available
-              clinicopathological variables.
-            </p>
+        <div class="overview-grid scientific-overview-grid">
+          <article class="feature-card scientific-card">
+            <span class="card-icon" aria-hidden="true">01</span>
+            <p class="card-label">DISEASE CONTEXT</p>
+            <h3>Lung adenocarcinoma is a major form of lung cancer.</h3>
+            <p>Lung cancer begins when abnormal lung cells grow without normal control. Lung adenocarcinoma is a common non-small-cell lung cancer subtype and is molecularly diverse, meaning that different tumours can be driven or influenced by different biological changes.</p>
           </article>
 
-          <article class="feature-card importance-card">
-            <span class="card-icon" aria-hidden="true">◎</span>
-            <p class="card-label">WHY IT MATTERS</p>
-            <h3>A convincing target story needs more than one significant plot.</h3>
-            <p>
-              Expression, effect size, survival, and clinical context answer different
-              questions. Together they show whether KRT16 is simply detectable or is
-              worth deeper biological investigation.
-            </p>
+          <article class="feature-card scientific-card data-needed-card">
+            <span class="card-icon" aria-hidden="true">02</span>
+            <p class="card-label">DISEASE BURDEN</p>
+            <h3>Incidence and mortality require a cited source.</h3>
+            <dl class="placeholder-stats">
+              <div><dt>[ADD VALUE]</dt><dd>annual lung-cancer incidence + year + population</dd></div>
+              <div><dt>[ADD VALUE]</dt><dd>annual lung-cancer mortality + year + population</dd></div>
+            </dl>
+            <p class="source-needed">Citation needed: add the authoritative source used in your presentation, such as a national cancer registry or international cancer agency.</p>
           </article>
-        </div>
 
-        <div class="in-progress-note">
-          <span aria-hidden="true">!</span>
-          <p><strong>A work in progress:</strong> KRT16 is a research target, not a validated biomarker. Associations in this retrospective cohort will not establish causation or clinical utility.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="data">
-      <div class="container">
-        <div class="compact-heading">
-          <div>
-            <p class="section-number">02 / DATA &amp; TOOLS</p>
-            <h2>Built with open data and open-source tools.</h2>
-          </div>
-        </div>
-
-        <div class="tools-grid">
-          <article class="tool-card">
-            <span class="tool-number">01</span>
-            <h3>TCGA-LUAD</h3>
-            <p>Public lung adenocarcinoma genomic and clinical research data accessed through the Genomic Data Commons.</p>
-            <span class="tool-type">DATA SOURCE</span>
+          <article class="feature-card scientific-card wide-scientific-card">
+            <span class="card-icon" aria-hidden="true">03</span>
+            <p class="card-label">RESEARCH OBJECTIVE</p>
+            <h3>Identify and validate genes associated with lung adenocarcinoma.</h3>
+            <p>The analysis first searches broadly for genes that differ between primary tumours and normal lung tissue. It then uses an independent cohort to test reproducibility before examining biological pathways, mutations, and patient survival. Molecular biomarkers may help describe tumour biology, stratify risk, or nominate therapeutic hypotheses, but computational associations require experimental and clinical validation.</p>
           </article>
-          <article class="tool-card">
-            <span class="tool-number">02</span>
-            <h3>TCGAbiolinks</h3>
-            <p>An R/Bioconductor package used to query, download, and prepare TCGA data in a reproducible workflow.</p>
-            <span class="tool-type">DATA ACCESS</span>
-          </article>
-          <article class="tool-card">
-            <span class="tool-number">03</span>
-            <h3>ggplot2</h3>
-            <p>An R package used to build clear expression and clinical-association figures with individual data points.</p>
-            <span class="tool-type">VISUALIZATION</span>
-          </article>
-          <article class="tool-card">
-            <span class="tool-number">04</span>
-            <h3>survival</h3>
-            <p>An R package used for Kaplan-Meier estimates and Cox proportional-hazards models.</p>
-            <span class="tool-type">OUTCOME ANALYSIS</span>
-          </article>
-        </div>
-
-        <div class="technical-panel">
-          <button class="technical-toggle" type="button" aria-expanded="false" aria-controls="technical-details">
-            <span><strong>Technical details</strong><small>See the data types and R objects used</small></span>
-            <span class="toggle-symbol" aria-hidden="true">+</span>
-          </button>
-          <div class="technical-details" id="technical-details" hidden>
-            <div>
-              <h3>Cohort and quality control</h3>
-              <p>Confirm tumour and normal sample counts, unique patients, metadata completeness, and the distribution of normalized KRT16 expression.</p>
-            </div>
-            <div>
-              <h3>Expression data</h3>
-              <p>Extract normalized KRT16 values for Primary Tumor and Solid Tissue Normal samples. Keep paired and unpaired comparisons clearly separated.</p>
-            </div>
-            <div>
-              <h3>Clinical endpoints</h3>
-              <p>Join one expression value per patient to overall-survival time and status. Report the expression-group rule before calculating survival differences.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <section class="section section-dark" id="workflow">
       <div class="container">
-        <div class="section-heading dark-heading">
+        <div class="section-heading dark-heading workflow-heading">
           <div>
-            <p class="section-number">03 / ANALYSIS WORKFLOW</p>
-            <h2>From a target name to a defensible result.</h2>
+            <p class="section-number">02 / BIOINFORMATICS WORKFLOW</p>
+            <h2>From public data to an integrated interpretation.</h2>
           </div>
-          <p>Each figure answers one question and includes the sample size, statistical test, effect estimate, and uncertainty needed for interpretation.</p>
+          <p class="section-lede">TCGA-LUAD provides the discovery data; GSE32863 tests whether the expression pattern can be reproduced independently.</p>
         </div>
 
-        <ol class="workflow-list">
-          <li>
-            <span class="workflow-number">01</span>
-            <div><h3>Build the analysis cohort</h3><p>Download TCGA-LUAD RNA-seq and clinical data, verify sample types, and keep one defined record per patient for survival analysis.</p></div>
-            <span class="workflow-status complete">COMPLETE</span>
-          </li>
-          <li>
-            <span class="workflow-number">02</span>
-            <div><h3>Extract and check KRT16</h3><p>Confirm the gene identifier, normalization method, missing values, outliers, and tumour/normal sample counts.</p></div>
-            <span class="workflow-status current">IN PROGRESS</span>
-          </li>
-          <li>
-            <span class="workflow-number">03</span>
-            <div><h3>Test differential expression</h3><p>Create an expression box/violin plot and, when matched samples exist, a paired tumour-normal plot with effect size and confidence interval.</p></div>
-            <span class="workflow-status planned">PLANNED</span>
-          </li>
-          <li>
-            <span class="workflow-number">04</span>
-            <div><h3>Evaluate survival</h3><p>Draw a Kaplan-Meier curve with numbers at risk, log-rank p-value, and a Cox hazard ratio with 95% confidence interval.</p></div>
-            <span class="workflow-status planned">PLANNED</span>
-          </li>
-          <li>
-            <span class="workflow-number">05</span>
-            <div><h3>Add clinical context</h3><p>Test KRT16 against stage or other prespecified variables, then summarize strengths, limitations, and the next validation step.</p></div>
-            <span class="workflow-status planned">PLANNED</span>
-          </li>
+        <div class="workflow-datasets" aria-label="Datasets used">
+          <article class="workflow-dataset-card">
+            <span class="dataset-kicker">DISCOVERY</span>
+            <h3>TCGA-LUAD</h3>
+            <p>RNA sequencing, somatic mutation, and clinical data used to discover differential expression and connect molecular findings with pathways, mutations, and survival.</p>
+          </article>
+          <div class="workflow-dataset-connector" aria-hidden="true">
+            <i></i><span>Test reproducibility</span><b>→</b><i></i>
+          </div>
+          <article class="workflow-dataset-card workflow-dataset-card--validation">
+            <span class="dataset-kicker">EXTERNAL VALIDATION</span>
+            <h3>GSE32863</h3>
+            <p>An independent gene-expression dataset used to test whether the tumour-versus-normal KRT16 expression pattern was reproduced in another cohort.</p>
+          </article>
+        </div>
+
+        <ol class="scientific-workflow">
+          <li><span class="step-number">01</span><div class="step-copy"><h3>Data collection</h3><p>Obtain TCGA-LUAD RNA-seq, mutation, and clinical data plus the independent GSE32863 expression dataset.</p></div><span class="step-status step-status--complete">INPUT</span></li>
+          <li><span class="step-number">02</span><div class="step-copy"><h3>Preparation and normalization</h3><p>Define tumour and normal samples, check identifiers and metadata, and use an appropriate normalized expression scale.</p></div><span class="step-status step-status--complete">QC</span></li>
+          <li><span class="step-number">03</span><div class="step-copy"><h3>Differential expression</h3><p>Compare primary LUAD tumours with normal lung tissue using log2 fold change and multiple-testing-adjusted p-values.</p></div><span class="step-status step-status--complete">DISCOVERY</span></li>
+          <li><span class="step-number">04</span><div class="step-copy"><h3>Candidate-gene identification</h3><p>Prioritize KRT16 from the broader tumour expression profile based on significant upregulation.</p></div><span class="step-status step-status--complete">TARGET</span></li>
+          <li><span class="step-number">05</span><div class="step-copy"><h3>External validation</h3><p>Test whether GSE32863 reproduces higher KRT16 expression in tumour than normal tissue.</p></div><span class="step-status step-status--complete">VALIDATE</span></li>
+          <li><span class="step-number">06</span><div class="step-copy"><h3>Pathway enrichment</h3><p>Identify tumour-enriched pathways and determine where KRT16 contributes as a leading-edge or core-enrichment gene.</p></div><span class="step-status step-status--current">CONTEXT</span></li>
+          <li><span class="step-number">07</span><div class="step-copy"><h3>Mutation analysis</h3><p>Characterize the frequency, type, recurrence, and distribution of KRT16 coding variants in TCGA-LUAD.</p></div><span class="step-status step-status--current">DNA</span></li>
+          <li><span class="step-number">08</span><div class="step-copy"><h3>Survival analysis</h3><p>Compare five-year overall survival between high- and low-KRT16-expression groups.</p></div><span class="step-status step-status--current">OUTCOME</span></li>
+          <li><span class="step-number">09</span><div class="step-copy"><h3>Biological interpretation</h3><p>Integrate reproducibility, pathways, mutation frequency, survival association, limitations, and next validation steps.</p></div><span class="step-status step-status--planned">SYNTHESIS</span></li>
         </ol>
+
+        <div class="technical-panel">
+          <button class="technical-toggle" type="button" aria-expanded="false" aria-controls="technical-details">
+            <span><strong>Analysis safeguards</strong><small>Open the scientific interpretation rules</small></span>
+            <span class="toggle-symbol" aria-hidden="true">+</span>
+          </button>
+          <div class="technical-details" id="technical-details" hidden>
+            <div><h3>Multiple testing</h3><p>Use adjusted p-values when thousands of genes or many pathways are tested simultaneously.</p></div>
+            <div><h3>Independent validation</h3><p>Reproduction in GSE32863 strengthens evidence but does not eliminate differences in platform, preprocessing, or patient composition.</p></div>
+            <div><h3>Association language</h3><p>Pathway, mutation, and survival findings are interpreted as associations unless supported by functional experiments.</p></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section section-light" id="results">
+    <section class="section section-light" id="differential">
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="section-number">04 / RESULTS TO PREPARE</p>
-            <h2>Four figures for the KRT16 presentation.</h2>
+            <p class="section-number">03 / DIFFERENTIAL EXPRESSION</p>
+            <h2>KRT16 emerged from a genome-wide tumour comparison.</h2>
           </div>
-          <p>
-            Prepare these outputs in this order. A non-significant result is still a
-            result: report the estimate and uncertainty instead of selecting only favourable findings.
-          </p>
+          <p class="section-lede">TCGA-LUAD primary tumours were compared with normal lung tissue to identify genes with both a meaningful expression shift and statistical support.</p>
         </div>
 
-        <div class="plots-grid">
-          <article class="plot-card plot-card-wide">
-            <div class="plot-image">
-              <img src="plots/krt16_expression.png" alt="KRT16 expression in TCGA-LUAD tumour and normal tissue" loading="lazy">
-              <div class="image-placeholder">
-                <span class="placeholder-chart expression-preview" aria-hidden="true"></span>
-                <strong>KRT16 expression plot</strong>
-                <small>Add <code>plots/krt16_expression.png</code> to display your result</small>
-              </div>
-            </div>
-            <div class="plot-caption"><span>01</span><div><small>PRIMARY RESULT // TUMOUR VS. NORMAL</small><h3>KRT16 expression box/violin plot</h3><p>Show individual samples, group medians, sample counts, the test used, p-value, and an effect size with 95% confidence interval. Use a paired plot as a companion result if matched tissue is available.</p></div></div>
-          </article>
+        <article class="scientific-figure result-figure-card">
+          <div class="figure-heading">
+            <div><span>FIGURE 01</span><h3>TCGA-LUAD differential-expression volcano plot</h3></div>
+            <span class="evidence-badge">KRT16 HIGHLIGHTED</span>
+          </div>
+          <div class="figure-frame figure-frame-light">
+            <img src="analysis_results/volcanoplot_KRT16.png" alt="Volcano plot of TCGA-LUAD differential expression showing log2 fold change on the x-axis, minus log10 adjusted p-value on the y-axis, and KRT16 labelled among significantly upregulated genes." loading="lazy">
+          </div>
+          <div class="figure-explanation-grid">
+            <div><strong>X-axis</strong><p>Log2 fold change describes direction and magnitude. Positive values indicate higher expression in tumour; negative values indicate lower expression.</p></div>
+            <div><strong>Y-axis</strong><p>−log10(adjusted p-value) increases as the multiple-testing-adjusted evidence becomes stronger.</p></div>
+            <div><strong>Colour and thresholds</strong><p>Coral points are upregulated, green points are downregulated, and grey points do not pass the selected thresholds. Dashed lines show the analysis cut-offs.</p></div>
+          </div>
+          <figcaption><strong>Main result:</strong> KRT16 is labelled on the positive side of the plot and was significantly upregulated in primary LUAD tumour tissue. Exact KRT16 log2 fold change and adjusted p-value: <span class="inline-placeholder">[ADD VALUES FROM RESULTS TABLE]</span>.</figcaption>
+        </article>
 
-          <article class="plot-card">
-            <div class="plot-image">
-              <img src="plots/krt16_paired.png" alt="Paired KRT16 expression in matched TCGA-LUAD tumour and normal samples" loading="lazy">
-              <div class="image-placeholder">
-                <span class="placeholder-chart paired-preview" aria-hidden="true"></span>
-                <strong>Matched-sample plot</strong>
-                <small>Add <code>plots/krt16_paired.png</code></small>
-              </div>
+        <div class="target-selection-block">
+          <div class="compact-heading">
+            <div><p class="section-number">TARGET SELECTION / EXTERNAL VALIDATION</p><h2>Why KRT16 was selected for deeper analysis.</h2></div>
+          </div>
+          <div class="workflow-datasets expression-dataset-comparison" aria-label="KRT16 discovery and independent validation cohorts">
+            <article class="workflow-dataset-card expression-dataset-card">
+              <span class="dataset-kicker">01 / DISCOVERY</span>
+              <h3>TCGA-LUAD</h3>
+              <p>KRT16 expression was significantly higher in tumour tissue than in normal lung tissue.</p>
+              <strong class="expression-direction">Direction: tumour <span aria-hidden="true">↑</span></strong>
+            </article>
+            <div class="workflow-dataset-connector expression-validation-connector" aria-hidden="true">
+              <span>Reproduced</span><b>→</b>
             </div>
-            <div class="plot-caption"><span>02</span><div><small>SENSITIVITY CHECK // MATCHED TISSUE</small><h3>Paired tumour-normal expression</h3><p>Connect samples from the same patient and report the paired-sample count, paired test, effect estimate, confidence interval, and p-value.</p></div></div>
-          </article>
-
-          <article class="plot-card">
-            <div class="plot-image">
-              <img src="plots/krt16_survival.png" alt="Kaplan-Meier overall survival curves by KRT16 expression group" loading="lazy">
-              <div class="image-placeholder">
-                <span class="placeholder-chart survival-preview" aria-hidden="true"></span>
-                <strong>Survival curve</strong>
-                <small>Add <code>plots/krt16_survival.png</code></small>
-              </div>
+            <article class="workflow-dataset-card workflow-dataset-card--validation expression-dataset-card">
+              <span class="dataset-kicker">02 / INDEPENDENT COHORT</span>
+              <h3>GSE32863</h3>
+              <p>The independent dataset showed the same tumour-versus-normal direction for KRT16 expression.</p>
+              <strong class="expression-direction">Direction: tumour <span aria-hidden="true">↑</span></strong>
+            </article>
+          </div>
+          <div class="selection-evidence-summary">
+            <div class="selection-logic">
+              <span class="dataset-kicker">EVIDENCE-BASED SELECTION</span>
+              <p><strong>KRT16 was not treated as a predetermined answer.</strong> It was prioritized because significant tumour upregulation in TCGA-LUAD was reproduced in GSE32863, strengthening evidence that the pattern was not limited to one cohort.</p>
             </div>
-            <div class="plot-caption"><span>03</span><div><small>CLINICAL OUTCOME // OVERALL SURVIVAL</small><h3>Kaplan-Meier survival curve</h3><p>Show the prespecified high/low rule, number at risk, events, log-rank p-value, and Cox hazard ratio with 95% confidence interval. Also model continuous KRT16 to avoid relying only on a cutoff.</p></div></div>
-          </article>
-
-          <article class="plot-card plot-card-wide">
-            <div class="plot-image">
-              <img src="plots/krt16_clinical.png" alt="Association of KRT16 expression with clinical variables in TCGA-LUAD" loading="lazy">
-              <div class="image-placeholder">
-                <span class="placeholder-chart clinical-preview" aria-hidden="true"></span>
-                <strong>Clinical association plot</strong>
-                <small>Add <code>plots/krt16_clinical.png</code></small>
-              </div>
-            </div>
-            <div class="plot-caption"><span>04</span><div><small>CONTEXT RESULT // CLINICOPATHOLOGICAL VARIABLES</small><h3>KRT16 by stage or clinical group</h3><p>Compare prespecified groups with sample counts and effect estimates. If event counts allow, add an adjusted Cox forest plot including KRT16, age, sex, and stage; label exploratory multiple comparisons clearly.</p></div></div>
-          </article>
+            <aside class="selection-data-note" role="note">
+              <span>STILL NEEDED</span>
+              <p>Add the GSE32863 validation figure, sample counts, effect estimate, and statistical result to quantify the independent replication.</p>
+            </aside>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="next-steps">
-      <div class="container next-grid">
-        <div>
-          <p class="section-number">05 / PRESENTATION CHECKLIST</p>
-          <h2>What every result slide should contain.</h2>
-          <p class="section-intro">Use the same cohort definition throughout and make each caption understandable without reading the analysis code.</p>
-        </div>
-        <ol class="next-list">
-          <li><span>01</span><div><h3>Start with the cohort</h3><p>State the TCGA project, data type, inclusion rules, tumour/normal counts, number of unique patients, and missing-data handling.</p></div></li>
-          <li><span>02</span><div><h3>Label the statistics</h3><p>Name the test and expression scale; report n, effect size, 95% confidence interval, and exact p-value beside each main result.</p></div></li>
-          <li><span>03</span><div><h3>Keep survival reproducible</h3><p>Define the endpoint and cutoff before showing the curve. Include censoring, numbers at risk, events, follow-up context, and Cox model details.</p></div></li>
-          <li><span>04</span><div><h3>End with a restrained conclusion</h3><p>Separate association from causation, acknowledge retrospective TCGA and multiple-testing limitations, and propose independent-cohort validation.</p></div></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section reflection-section" id="reflection">
+    <section class="section" id="pathways">
       <div class="container">
-        <div class="reflection-heading">
-          <p class="section-number">06 / REFLECTION</p>
-          <h2>What I have learned so far.</h2>
+        <div class="section-heading">
+          <div>
+            <p class="section-number">04 / PATHWAY ENRICHMENT</p>
+            <h2>Placing KRT16 within tumour-associated biology.</h2>
+          </div>
+          <p class="section-lede">Enrichment analysis asks whether coordinated gene sets are concentrated near the top or bottom of the ranked tumour expression profile.</p>
         </div>
-        <div class="learning-grid">
-          <article><span>01</span><h3>Define the cohort before testing KRT16.</h3><p>Sample type, patient duplication, missing outcomes, and normalization choices all affect what the comparison can support.</p></article>
-          <article><span>02</span><h3>Effect size matters alongside significance.</h3><p>A p-value alone does not describe the magnitude, direction, precision, or practical importance of a KRT16 association.</p></article>
-          <article><span>03</span><h3>Validation is part of the conclusion.</h3><p>TCGA can generate evidence for a hypothesis, but an independent cohort and biological experiments are needed before stronger claims.</p></article>
+
+        <div class="pathway-definition-grid">
+          <article class="scientific-card"><span class="card-label">GENE-SET MEMBER</span><h3>Included in a pathway</h3><p>KRT16 appears in the pathway’s predefined gene list. Membership alone does not show that it drove the enrichment result.</p></article>
+          <article class="scientific-card"><span class="card-label">LEADING EDGE</span><h3>Contributes to enrichment</h3><p>KRT16 occurs in the subset of genes that contributes most strongly to the enrichment score, making it more relevant to the observed signal.</p></article>
         </div>
-        <blockquote>
-          <p>“My goal is not to make every KRT16 result significant; it is to make every analysis clear, reproducible, and interpretable.”</p>
-          <cite>— Student reflection</cite>
-        </blockquote>
+
+        <div class="database-panel">
+          <p class="card-label">PATHWAY DATABASES TO REPORT WHEN PRESENT IN THE ANALYSIS</p>
+          <div class="database-chips" aria-label="Potential pathway databases">
+            <span>GO</span><span>Hallmark</span><span>KEGG</span><span>Reactome</span><span>WikiPathways</span><span>BioCarta</span><span>Oncogenic signatures</span>
+          </div>
+          <p>Only databases actually queried in the enrichment output should remain in the final presentation.</p>
+        </div>
+
+        <div class="pathway-results-shell">
+          <div class="pathway-metrics">
+            <article><strong>[ADD TOTAL]</strong><span>enriched pathways involving KRT16</span></article>
+            <article><strong>[ADD COUNT]</strong><span>pathways where KRT16 is leading edge</span></article>
+            <article><strong>[ADD COUNTS]</strong><span>results grouped by database</span></article>
+          </div>
+          <div class="figure-placeholder scientific-placeholder" role="note">
+            <span>PATHWAY FIGURES NOT FOUND</span>
+            <h3>Add KRT16 enrichment plots and result tables</h3>
+            <p>No pathway files are currently present in <code>analysis_results</code>. Add the pathway names, database-specific counts, enrichment statistics, and relevant plots before drawing biological conclusions.</p>
+          </div>
+        </div>
+
+        <div class="in-progress-note pathway-caution"><span aria-hidden="true">!</span><p><strong>Interpretation boundary:</strong> pathway enrichment can connect KRT16 with coordinated tumour biology, but pathway membership or leading-edge status does not prove that KRT16 causes the pathway activity.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="mutation">
+      <div class="container">
+        <div class="section-heading dark-heading">
+          <div><p class="section-number">05 / MUTATION ANALYSIS</p><h2>Overexpressed, but rarely mutated.</h2></div>
+          <p class="section-lede">TCGA-LUAD mutation data were examined to determine whether recurrent KRT16 coding changes could explain the widespread expression signal.</p>
+        </div>
+
+        <div class="mutation-dashboard">
+          <div class="mutation-frequency-card">
+            <span class="card-label">SAMPLE FREQUENCY</span>
+            <strong>7 / 616</strong>
+            <p>tumour samples with a KRT16 mutation</p>
+            <div class="frequency-bar" aria-label="Approximately 1.14 percent of samples contained a KRT16 mutation"><span></span></div>
+            <b>≈ 1.14%</b>
+          </div>
+          <div class="mutation-type-card">
+            <span class="card-label">VARIANT TYPES / 7 RECORDS</span>
+            <div class="mutation-type-row"><span>Missense</span><div><i style="--count:4"></i></div><strong>4</strong></div>
+            <div class="mutation-type-row"><span>Nonsense</span><div><i style="--count:2"></i></div><strong>2</strong></div>
+            <div class="mutation-type-row"><span>Frameshift deletion</span><div><i style="--count:1"></i></div><strong>1</strong></div>
+          </div>
+        </div>
+
+        <div class="mutation-findings">
+          <article><span>01</span><h3>Seven different patients</h3><p>Each mutation record occurred in a different tumour sample, so no patient contributed repeated KRT16 variants.</p></article>
+          <article><span>02</span><h3>No recurrent hotspot</h3><p>No single coding position was repeatedly altered across the cohort.</p></article>
+          <article><span>03</span><h3>Low-frequency profile</h3><p>KRT16 has a low-frequency, non-recurrent mutation profile; it should not be described as having “no mutation profile.”</p></article>
+        </div>
+
+        <div class="evidence-interpretation dark-interpretation">
+          <p><strong>Scientific interpretation:</strong> KRT16 is significantly overexpressed but rarely mutated. Its broad expression increase is therefore unlikely to be explained by recurrent KRT16 coding mutations. The expression pattern may instead reflect upstream transcriptional, epigenetic, signalling, or copy-number regulation.</p>
+          <p>KRT16 should not be presented as a common mutation-driven LUAD driver based on this analysis. It may be more relevant as an expression-based biomarker or downstream effector.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="survival">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-number">06 / SURVIVAL ANALYSIS</p><h2>Higher KRT16 expression marks poorer five-year survival.</h2></div>
+          <p class="section-lede">Kaplan–Meier analysis compares overall survival between patients assigned to high- and low-KRT16-expression groups.</p>
+        </div>
+
+        <article class="scientific-figure result-figure-card survival-figure-card">
+          <div class="figure-heading">
+            <div><span>FIGURE 02</span><h3>Five-year overall survival by KRT16 expression</h3></div>
+            <span class="evidence-badge evidence-badge-alert">LOG-RANK p = 0.00032</span>
+          </div>
+          <div class="figure-frame figure-frame-light">
+            <img src="analysis_results/KRT16_TCGA_LUAD_5_year_survival_curve.png" alt="Kaplan-Meier plot of five-year overall survival in TCGA-LUAD showing lower survival probability for the high-KRT16-expression group, log-rank p equals 0.00032, with a risk table from 0 to 60 months." loading="lazy">
+          </div>
+          <div class="figure-explanation-grid survival-explanation">
+            <div><strong>X-axis</strong><p>Overall-survival time in months, displayed through 60 months or five years.</p></div>
+            <div><strong>Y-axis</strong><p>Estimated probability of remaining alive over time.</p></div>
+            <div><strong>Risk table</strong><p>Both groups begin with 252 patients at risk; the table reports how many remain under observation at each time point.</p></div>
+          </div>
+          <figcaption><strong>Main result:</strong> the high-expression curve remains below the low-expression curve, and the log-rank test indicates a statistically significant difference. This is a prognostic association; it does not show that KRT16 directly causes poorer survival.</figcaption>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="integrated">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-number">07 / INTEGRATED RESULTS &amp; CONCLUSION</p><h2>The evidence chain, in analysis order.</h2></div>
+          <p class="section-lede">Each result answers a different question. Together they support a cautious, testable interpretation of KRT16 in LUAD.</p>
+        </div>
+
+        <div class="integrated-results">
+          <article class="integrated-result">
+            <span class="result-index">01</span>
+            <div class="integrated-visual"><img src="analysis_results/volcanoplot_KRT16.png" alt="Thumbnail of the TCGA-LUAD volcano plot with KRT16 highlighted." loading="lazy"></div>
+            <div><small>TCGA DIFFERENTIAL EXPRESSION</small><h3>KRT16 is significantly upregulated.</h3><p><strong>Key finding:</strong> positive tumour-versus-normal expression shift with adjusted statistical support.</p><p>This nominated KRT16 for independent validation.</p></div>
+          </article>
+          <article class="integrated-result">
+            <span class="result-index">02</span>
+            <div class="integrated-visual summary-visual"><b>TCGA</b><i>→</i><b>GSE32863</b></div>
+            <div><small>EXTERNAL VALIDATION</small><h3>The higher tumour-expression direction was reproduced.</h3><p><strong>Key finding:</strong> two independent cohorts showed the same direction.</p><p>Add the GSE32863 figure and statistics to quantify this replication.</p></div>
+          </article>
+          <article class="integrated-result">
+            <span class="result-index">03</span>
+            <div class="integrated-visual target-visual"><strong>KRT16</strong><span>DISCOVERY + VALIDATION</span></div>
+            <div><small>TARGET-SELECTION EVIDENCE</small><h3>KRT16 was selected through converging expression evidence.</h3><p><strong>Key finding:</strong> selection followed the analysis rather than assuming KRT16 in advance.</p><p>This justified pathway, mutation, and survival follow-up.</p></div>
+          </article>
+          <article class="integrated-result">
+            <span class="result-index">04</span>
+            <div class="integrated-visual summary-visual missing-visual"><b>[TBD]</b><span>PATHWAYS</span></div>
+            <div><small>PATHWAY ENRICHMENT</small><h3>KRT16-associated pathway results require the missing output.</h3><p><strong>Key numbers needed:</strong> total enriched pathways, leading-edge count, and counts by database.</p><p>These results should provide biological context without implying causation.</p></div>
+          </article>
+          <article class="integrated-result">
+            <span class="result-index">05</span>
+            <div class="integrated-visual mutation-mini"><strong>1.14%</strong><span>7 / 616 samples</span></div>
+            <div><small>MUTATION PROFILE</small><h3>KRT16 mutations are uncommon and non-recurrent.</h3><p><strong>Key findings:</strong> 4 missense, 2 nonsense, and 1 frameshift deletion; no recurrent hotspot.</p><p>The expression signal is unlikely to reflect a common mutation-driven mechanism.</p></div>
+          </article>
+          <article class="integrated-result">
+            <span class="result-index">06</span>
+            <div class="integrated-visual"><img src="analysis_results/KRT16_TCGA_LUAD_5_year_survival_curve.png" alt="Thumbnail of the KRT16 five-year Kaplan-Meier survival plot." loading="lazy"></div>
+            <div><small>SURVIVAL ASSOCIATION</small><h3>High KRT16 expression is associated with poorer survival.</h3><p><strong>Key findings:</strong> log-rank p = 0.00032; 252 patients per group at baseline.</p><p>This supports prognostic relevance but does not establish biological causation.</p></div>
+          </article>
+        </div>
+
+        <div class="final-conclusion">
+          <p class="section-number">FINAL CONCLUSION</p>
+          <h2>KRT16 is a reproducible expression signal with prognostic potential.</h2>
+          <p class="conclusion-statement">KRT16 was significantly upregulated in TCGA-LUAD tumours, and the higher tumour-expression pattern was reproduced in GSE32863. It appeared in tumour-enriched biological pathways, while coding mutations were uncommon and non-recurrent. High KRT16 expression was also associated with poorer overall survival. Together, these findings support KRT16 as a potential expression-based and prognostic biomarker that deserves further functional investigation—not as a proven causal driver or validated clinical test.</p>
+        </div>
+
+        <div class="limitations-grid">
+          <article><span>01</span><h3>Retrospective datasets</h3><p>The evidence comes mainly from public cohorts collected for research rather than prospective clinical validation.</p></article>
+          <article><span>02</span><h3>Association is not causation</h3><p>Expression, pathway, and survival relationships do not prove that KRT16 directly changes tumour behaviour.</p></article>
+          <article><span>03</span><h3>Clinical adjustment needed</h3><p>Survival models should assess age, stage, sex, smoking status, and other relevant variables where data and event counts permit.</p></article>
+          <article><span>04</span><h3>Experimental validation</h3><p>Independent cohorts and functional laboratory studies are required before stronger biological or therapeutic claims.</p></article>
+        </div>
       </div>
     </section>
 
     <section class="contact-section" id="contact">
       <div class="container contact-inner">
-        <div>
-          <p class="section-number">PROJECT NOTEBOOK</p>
-          <h2>Follow the KRT16 analysis as it develops.</h2>
-          <p>Code, cohort definitions, statistical choices, and completed figures can be shared through the project repository.</p>
-        </div>
-        <!-- Replace the # below with your real GitHub repository URL. -->
-        <a class="button button-light" href="#" aria-label="View this project on GitHub">
-          View on GitHub <span aria-hidden="true">↗</span>
-        </a>
+        <div><p class="section-number">NEXT STEP</p><h2>Complete the missing evidence fields.</h2><p>Add cited disease-burden statistics, exact KRT16 differential-expression values, the GSE32863 validation figure, and pathway-enrichment outputs.</p></div>
+        <a class="button button-light" href="#integrated">Review conclusion <span aria-hidden="true">↑</span></a>
       </div>
     </section>
   </main>
@@ -401,8 +458,8 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <a class="brand footer-brand" href="#home"><span class="brand-mark">ATCG</span><span>KRT16 in LUAD</span></a>
-      <p>Student bioinformatics portfolio · Analysis in progress</p>
-      <p>&copy; <span id="current-year"></span> Built with HTML, CSS &amp; curiosity.</p>
+      <p>Scientific bioinformatics presentation · Association-focused interpretation</p>
+      <p>&copy; <span id="current-year"></span> TCGA-LUAD + GSE32863</p>
     </div>
   </footer>
 </body>
