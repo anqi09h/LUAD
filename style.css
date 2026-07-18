@@ -1855,9 +1855,10 @@ code {
   min-height: 900px;
   padding-top: 165px;
   background:
-    linear-gradient(90deg, transparent 49.9%, rgba(0, 230, 199, 0.07) 50%, transparent 50.1%),
-    radial-gradient(circle at 78% 45%, rgba(33, 169, 255, 0.11), transparent 24%),
-    linear-gradient(150deg, #041822 0%, #031017 60%);
+    linear-gradient(90deg, rgba(2, 10, 15, 0.97) 0%, rgba(2, 12, 17, 0.9) 38%, rgba(2, 13, 18, 0.64) 68%, rgba(2, 10, 15, 0.78) 100%),
+    linear-gradient(180deg, rgba(3, 16, 23, 0.2) 0%, rgba(3, 16, 23, 0.3) 58%, #031017 100%),
+    radial-gradient(ellipse at center, transparent 38%, rgba(0, 0, 0, 0.38) 100%),
+    url("hero.png") center 48% / cover no-repeat;
 }
 
 .hero::before {
@@ -2434,7 +2435,7 @@ code {
 .workflow-list li {
   position: relative;
   border-color: var(--line);
-  transition: background 0.25s ease, padding 0.25s ease;
+  transition: background 0.25s ease;
 }
 
 .workflow-list li::before {
@@ -2448,8 +2449,6 @@ code {
 }
 
 .workflow-list li:hover {
-  padding-right: 20px;
-  padding-left: 20px;
   background: rgba(0, 230, 199, 0.035);
 }
 
@@ -2461,6 +2460,11 @@ code {
 .workflow-number {
   color: var(--teal);
   font-family: "SFMono-Regular", Consolas, monospace;
+  transition: transform 0.25s ease;
+}
+
+.workflow-list li:hover .workflow-number {
+  transform: translateX(20px);
 }
 
 .workflow-list p,
@@ -2713,6 +2717,11 @@ blockquote cite {
 
   .hero {
     padding-top: 125px;
+    background:
+      linear-gradient(90deg, rgba(2, 10, 15, 0.96) 0%, rgba(2, 12, 17, 0.86) 62%, rgba(2, 10, 15, 0.76) 100%),
+      linear-gradient(180deg, rgba(3, 16, 23, 0.3) 0%, rgba(3, 16, 23, 0.48) 58%, #031017 100%),
+      radial-gradient(ellipse at center, transparent 28%, rgba(0, 0, 0, 0.45) 100%),
+      url("hero.png") 67% center / cover no-repeat;
   }
 
   h1 {
@@ -2783,47 +2792,6 @@ blockquote cite {
   body.motion-ready .reveal-target.is-visible {
     animation: module-reveal-in 0.65s ease both;
   }
-
-  body.motion-ready .water-reveal {
-    position: relative;
-    overflow: hidden;
-    opacity: 1;
-    clip-path: inset(0 0 0 0 round 2px);
-    filter: blur(0);
-    transform: translate3d(0, 0, 0) skewX(0);
-  }
-
-  body.motion-ready h2.water-reveal,
-  body.motion-ready h3.water-reveal,
-  body.motion-ready p.water-reveal,
-  body.motion-ready blockquote cite.water-reveal {
-    width: fit-content;
-    max-width: 100%;
-  }
-
-  body.motion-ready .water-reveal::after {
-    position: absolute;
-    inset: -16% -45%;
-    z-index: 1;
-    background:
-      radial-gradient(circle at 22% 50%, rgba(0, 230, 199, 0.34), transparent 19%),
-      radial-gradient(circle at 43% 45%, rgba(185, 242, 39, 0.22), transparent 15%),
-      linear-gradient(90deg, transparent 0 24%, rgba(0, 230, 199, 0.28) 38%, rgba(255, 255, 255, 0.5) 50%, rgba(33, 169, 255, 0.2) 60%, transparent 76%);
-    content: "";
-    mix-blend-mode: screen;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-62%) scaleX(0.7);
-  }
-
-  body.motion-ready .water-reveal.is-visible {
-    animation: water-content-reveal 1s cubic-bezier(0.19, 1, 0.22, 1) var(--reveal-delay, 0ms) both;
-  }
-
-  body.motion-ready .water-reveal.is-visible::after {
-    animation: water-text-wash 1.05s cubic-bezier(0.19, 1, 0.22, 1) var(--reveal-delay, 0ms) both;
-  }
-
 }
 
 @keyframes module-reveal-in {
@@ -2838,39 +2806,170 @@ blockquote cite {
   }
 }
 
-@keyframes water-content-reveal {
-  from {
-    opacity: 0;
-    clip-path: inset(0 100% 0 0 round 2px);
-    filter: blur(8px);
-    transform: translate3d(-56px, 14px, 0) skewX(-2deg);
+/* ---------- Dark fluid-wave text reveal ---------- */
+:root {
+  --wave-accent: var(--teal);
+  --wave-accent-secondary: var(--orange);
+  --wave-highlight: var(--muted);
+  --wave-shadow: var(--navy);
+}
+
+.wave-reveal {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+h2.wave-reveal,
+h3.wave-reveal,
+p.wave-reveal,
+blockquote cite.wave-reveal {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.wave-reveal__content {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 100%;
+}
+
+.wave-animation-ready .wave-reveal:not(.is-wave-revealed) .wave-reveal__content {
+  clip-path: polygon(0 0, 0 0, 0 15%, 1.2% 31%, 0 48%, 1% 66%, 0 84%, 0 100%, 0 100%);
+}
+
+.wave-reveal.is-wave-revealed .wave-reveal__content {
+  animation:
+    fluid-text-reveal 1.35s cubic-bezier(0.22, 0.75, 0.25, 1) var(--wave-delay, 0ms) both,
+    fluid-text-reflection 1.35s ease-out var(--wave-delay, 0ms) both;
+}
+
+.wave-reveal.is-wave-complete .wave-reveal__content {
+  clip-path: none;
+  animation: none;
+  text-shadow: none;
+}
+
+.wave-reveal__overlay {
+  position: absolute;
+  z-index: 2;
+  inset: -42% -18%;
+  width: 136%;
+  height: 184%;
+  overflow: visible;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(-108%, 0, 0);
+  transform-box: border-box;
+  will-change: transform, opacity;
+}
+
+.wave-reveal.is-wave-revealed .wave-reveal__overlay {
+  animation: fluid-wave-cross 1.35s cubic-bezier(0.22, 0.75, 0.25, 1) var(--wave-delay, 0ms) both;
+}
+
+.wave-reveal__trail--deep {
+  opacity: 0.58;
+}
+
+.wave-reveal__fold {
+  stroke: var(--wave-accent);
+  stroke-width: 4.2;
+  stroke-linecap: round;
+  opacity: 0.34;
+}
+
+.wave-reveal__fold--soft {
+  stroke: var(--wave-accent-secondary);
+  stroke-width: 2.4;
+  opacity: 0.2;
+}
+
+.wave-reveal__crest-inner {
+  stroke: var(--wave-accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0.48;
+}
+
+.wave-reveal__reflection {
+  stroke: var(--wave-highlight);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  opacity: 0.46;
+}
+
+.wave-reveal__reflection--fine {
+  stroke: var(--wave-accent-secondary);
+  stroke-width: 1.25;
+  opacity: 0.28;
+}
+
+@keyframes fluid-text-reveal {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 15%, 1.2% 31%, 0 48%, 1% 66%, 0 84%, 0 100%, 0 100%);
   }
 
-  to {
-    opacity: 1;
-    clip-path: inset(0 0 0 0 round 2px);
-    filter: blur(0);
-    transform: translate3d(0, 0, 0) skewX(0);
+  15% {
+    clip-path: polygon(0 0, 8% 0, 6% 14%, 9% 31%, 6.5% 48%, 9% 66%, 7% 84%, 9% 100%, 0 100%);
+  }
+
+  35% {
+    clip-path: polygon(0 0, 35% 0, 32% 14%, 36% 31%, 33% 48%, 37% 66%, 32% 84%, 36% 100%, 0 100%);
+  }
+
+  70% {
+    clip-path: polygon(0 0, 78% 0, 74% 14%, 80% 31%, 76% 48%, 81% 66%, 75% 84%, 79% 100%, 0 100%);
+  }
+
+  90%,
+  100% {
+    clip-path: polygon(0 0, 100% 0, 98.5% 14%, 100% 31%, 98.8% 48%, 100% 66%, 98.5% 84%, 100% 100%, 0 100%);
   }
 }
 
-@keyframes water-text-wash {
+@keyframes fluid-text-reflection {
+  0%,
+  18% {
+    text-shadow: none;
+  }
+
+  52% {
+    text-shadow: 0 0 9px color-mix(in srgb, var(--wave-accent) 24%, transparent);
+  }
+
+  86%,
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes fluid-wave-cross {
   0% {
     opacity: 0;
-    transform: translateX(-62%) scaleX(0.7);
+    transform: translate3d(-108%, 0, 0);
   }
 
-  18% {
-    opacity: 0.72;
+  15% {
+    opacity: 0.44;
   }
 
-  62% {
-    opacity: 0.4;
+  35% {
+    opacity: 0.78;
+  }
+
+  70% {
+    opacity: 0.68;
+  }
+
+  90% {
+    opacity: 0.34;
   }
 
   100% {
     opacity: 0;
-    transform: translateX(62%) scaleX(1.12);
+    transform: translate3d(108%, 0, 0);
   }
 }
 
@@ -3040,53 +3139,19 @@ blockquote cite {
   }
 }
 
-/* Directional stream that travels with left-to-right section reveals. */
-.water-splash--entrance {
-  z-index: 95;
-}
-
-.water-splash--entrance .water-droplet,
-.water-splash--entrance .water-droplet:nth-of-type(3n) {
-  top: var(--flow-y);
-  left: 0;
-  width: var(--flow-width);
-  height: var(--flow-height);
-  border-width: 1.2px;
-  border-radius: 58% 42% 54% 46% / 50%;
-  transform: translate3d(-4px, 0, 0) scaleX(0.3) scaleY(0.8);
-  animation: water-droplet-flow var(--flow-duration) cubic-bezier(0.19, 0.72, 0.22, 1) forwards;
-  animation-delay: var(--flow-delay);
-}
-
-@keyframes water-droplet-flow {
-  0% {
-    opacity: 0;
-    transform: translate3d(-4px, 0, 0) scaleX(0.3) scaleY(0.8);
-  }
-
-  18% {
-    opacity: 0.88;
-  }
-
-  48% {
-    opacity: 0.82;
-    transform: translate3d(calc(var(--flow-distance) * 0.42), var(--flow-curve-y), 0) scaleX(var(--flow-stretch)) scaleY(1);
-  }
-
-  76% {
-    opacity: 0.62;
-    transform: translate3d(calc(var(--flow-distance) * 0.78), var(--flow-late-y), 0) scaleX(calc(var(--flow-stretch) * 1.08)) scaleY(0.86);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate3d(var(--flow-distance), var(--flow-end-y), 0) scaleX(calc(var(--flow-stretch) * 1.18)) scaleY(0.58);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .water-droplet {
     display: none;
+  }
+
+  .wave-reveal__overlay {
+    display: none;
+  }
+
+  .wave-reveal__content {
+    clip-path: none;
+    animation: none;
+    text-shadow: none;
   }
 }
 
